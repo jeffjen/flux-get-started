@@ -15,8 +15,8 @@ spec:
   values:
     services:
       one:
-        image_tag: "alpine"
-        change_cause: "2020-10-19 21:12"
+        image_tag: "latest"
+        change_cause: "2020-10-19 21:16"
       two:
         image_tag: "alpine"
         change_cause: "2020-10-19 21:12"
