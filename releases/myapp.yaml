@@ -15,7 +15,7 @@ spec:
   values:
     services:
       one:
-        image_tag: latest
+        image_tag: stable
       two:
         image_tag: stable
       three:
