@@ -17,7 +17,7 @@ spec:
       one:
         image_tag: stable
       two:
-        image_tag: latest
+        image_tag: stable
       three:
         image_tag: latest
       four:
