@@ -19,7 +19,7 @@ spec:
       two:
         image_tag: stable
       three:
-        image_tag: latest
+        image_tag: stable
       four:
-        image_tag: latest
+        image_tag: stable
 
