@@ -15,11 +15,11 @@ spec:
   values:
     services:
       one:
-        image_tag: stable
+        image_tag: latest
       two:
-        image_tag: stable
+        image_tag: latest
       three:
-        image_tag: stable
+        image_tag: latest
       four:
-        image_tag: stable
+        image_tag: latest
 
