@@ -8,6 +8,7 @@ metadata:
   labels:
     app: "nginx-{{ $svc }}"
     release: "{{ $currentTime }}"
+    kubernetes.io/change-cause: "{{ $currentTime }}"
 spec:
   replicas: {{ default $val.replicas 1 }}
   revisionHistoryLimit: 10
