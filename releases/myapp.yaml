@@ -1,0 +1,25 @@
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: myapp
+  namespace: demo
+  annotations:
+    fluxcd.io/automated: "false"
+spec:
+  releaseName: myapp
+  chart:
+    git: ssh://git@github.com/jeffjen/flux-get-started
+    ref: master
+    path: charts/myapp
+  values:
+    services:
+      one:
+        image_tag: latest
+      two:
+        image_tag: latest
+      three:
+        image_tag: latest
+      four:
+        image_tag: latest
+
