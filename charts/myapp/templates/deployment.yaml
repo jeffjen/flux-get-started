@@ -5,10 +5,11 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: "nginx-{{ $svc }}"
+  annotations:
+    kubernetes.io/change-cause: "{{ $val.change_cause }}"
   labels:
     app: "nginx-{{ $svc }}"
     release: "{{ $currentTime }}"
-    kubernetes.io/change-cause: "{{ $currentTime }}"
 spec:
   replicas: {{ default $val.replicas 1 }}
   revisionHistoryLimit: 10

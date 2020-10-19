@@ -16,10 +16,14 @@ spec:
     services:
       one:
         image_tag: "alpine"
+        change_cause: "2020-10-19 21:12"
       two:
         image_tag: "alpine"
+        change_cause: "2020-10-19 21:12"
       three:
         image_tag: "alpine"
+        change_cause: "2020-10-19 21:12"
       four:
         image_tag: "alpine"
+        change_cause: "2020-10-19 21:12"
 
