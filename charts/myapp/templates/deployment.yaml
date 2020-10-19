@@ -1,3 +1,4 @@
+{{- $currentTime := (now | date "20060102150405") }}
 {{- range $svc, $val := .Values.services }}
 ---
 apiVersion: apps/v1
@@ -6,8 +7,10 @@ metadata:
   name: "nginx-{{ $svc }}"
   labels:
     app: "nginx-{{ $svc }}"
+    release: "{{ $currentTime }}"
 spec:
   replicas: {{ default $val.replicas 1 }}
+  revisionHistoryLimit: 10
   selector:
     matchLabels:
       app: "nginx-{{ $svc }}"
