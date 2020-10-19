@@ -4,22 +4,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: "{{ $svc }}"
+  name: "nginx-{{ $svc }}"
   labels:
-    app: "{{ $svc }}"
+    app: "nginx-{{ $svc }}"
 spec:
   selector:
     matchLabels:
-      app: "{{ $svc }}"
+      app: "nginx-{{ $svc }}"
       releaseTime: "{{ $currentTime }}"
   replicas: {{ default $val.replicas 1 }}
   template:
     metadata:
       labels:
-        app: "{{ $svc }}"
+        app: "nginx-{{ $svc }}"
         releaseTime: "{{ $currentTime }}"
     spec:
       containers:
-        - name: "{{ $svc }}"
+        - name: "nginx-{{ $svc }}"
           image: nginx:{{ $val.image_tag }}
 {{ end }}
