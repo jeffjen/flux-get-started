@@ -1,6 +1,6 @@
 services:
   one:
-    image_tag: latest
+    image_tag: stable
   two:
     image_tag: latest
   three:
