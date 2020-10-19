@@ -1,0 +1,25 @@
+{{- $currentTime := (now | date "20060102150405") }}
+{{- range $svc, $val := .Values.services }}
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: "{{ $svc }}"
+  labels:
+    app: "{{ $svc }}"
+spec:
+  selector:
+    matchLabels:
+      app: "{{ $svc }}"
+      releaseTime: "{{ $currentTime }}"
+  replicas: {{ default $val.replicas 1 }}
+  template:
+    metadata:
+      labels:
+        app: "{{ $svc }}"
+        releaseTime: "{{ $currentTime }}"
+    spec:
+      containers:
+        - name: "{{ $svc }}"
+          image: nginx:{{ $val.image_tag }}
+{{ end }}
